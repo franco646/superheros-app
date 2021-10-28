@@ -1,7 +1,7 @@
 import React from "react";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
-import { render, screen, fireEvent, waitFor } from "../../redux/test-utils";
+import { render, screen, waitFor } from "../../redux/test-utils";
 import "@testing-library/jest-dom";
 
 import { Route } from "react-router-dom";
