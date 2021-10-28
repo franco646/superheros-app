@@ -16,8 +16,9 @@
     "test": "npm run test-backend && npm run test-frontend",
     "test-backend": "jest",
     "test-frontend": "npm run test --prefix frontend",
-    "install": "npm install && npm install --prefix frontend",
+    "install-all": "npm install && npm install --prefix frontend",
     "start": "node src/app.js",
+    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build",
     "client": "npm run start --prefix frontend",
     "dev": "concurrently \"nodemon src/app.js\" \"npm run client\""
   },
