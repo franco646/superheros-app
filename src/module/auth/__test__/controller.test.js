@@ -1,5 +1,5 @@
 import UserValidationError from "../Controller/error/UserValidationError.js";
-import { AuthController } from "../module.js";
+import { AuthController } from "../Module.js";
 
 const jwtMock = {
   sign: jest.fn(() => "this is a jwt test token"),
