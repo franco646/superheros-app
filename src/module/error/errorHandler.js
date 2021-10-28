@@ -14,9 +14,7 @@ function returnError(error, req, res, next) {
   if (isOperationalError()) {
     return res.status(httpStatusCodes.OK).send(error.message);
   }
-  return res
-    .status(error.statusCode || 500)
-    .send(error.message);
+  return res.status(error.statusCode || 500).send(error.message);
 }
 
 function isOperationalError(error) {

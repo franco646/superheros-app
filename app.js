@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import path from 'path'
+import path from "path";
 const __dirname = path.resolve();
 dotenv.config();
 
@@ -20,7 +20,7 @@ import bodyParser from "body-parser";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "frontend", "build")))
+app.use(express.static(path.join(__dirname, "frontend", "build")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -43,8 +43,8 @@ app.use(returnError);
 
 const port = process.env.PORT || 8080;
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend', 'build', 'index.html'));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "frontend", "build", "index.html"));
 });
 
 app.listen(port);

@@ -43,9 +43,7 @@ export default class TeamController {
         })
       );
       const team = dataToEntity({ ...req.body, heroes: fetchedHeroes });
-      if (team.averages) {
-        team.calculateTeamAverages();
-      }
+      team.calculateTeamAverages();
 
       await this.teamRepository.save(team);
 

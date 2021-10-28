@@ -1,5 +1,23 @@
+import Hero from "../../heroes/entity/heroEntity.js";
 import Team from "../entity/teamEntity.js";
+import { dataToEntity } from "../mapper/teamMapper.js";
 import { TeamController } from "../module.js";
+
+const heroMock = {
+  id: 123,
+  powerstats: {
+    combat: 0,
+    power: 0,
+    durability: 0,
+    speed: 0,
+    strength: 0,
+    intelligence: 0,
+  },
+  appearance: {
+    height: "0 cm",
+    weight: "0 kg",
+  },
+};
 
 const authMiddlewareMock = jest.fn();
 
@@ -11,8 +29,7 @@ const repositoryMock = {
 };
 
 const serviceMock = {
-  findByName: jest.fn(() => Promise.resolve([])),
-  findById: jest.fn(() => Promise.resolve({})),
+  findById: jest.fn(() => Promise.resolve(heroMock)),
 };
 
 const controller = new TeamController(
@@ -31,9 +48,11 @@ describe("TeamController", () => {
 
     expect(serviceMock.findById).toHaveBeenCalledTimes(1);
     expect(repositoryMock.save).toHaveBeenCalledTimes(1);
-    expect(repositoryMock.save).toHaveBeenCalledWith(
-      new Team({ heroes: [{}], id: 1 })
-    );
+
+    const teamMock = dataToEntity({ id: 1, heroes: [heroMock] });
+    teamMock.calculateTeamAverages();
+
+    expect(repositoryMock.save).toHaveBeenCalledWith(teamMock);
   });
 
   test("findAll should call getAll function from repository and return it", async () => {
@@ -51,10 +70,10 @@ describe("TeamController", () => {
 
     expect(repositoryMock.getAll).toHaveBeenCalledTimes(1);
     expect(jsonMock).toHaveBeenCalledTimes(1);
-    expect(jsonMock).toHaveBeenCalledWith({ teams: []});
+    expect(jsonMock).toHaveBeenCalledWith({ teams: [] });
   });
 
-  test('findById should find hero by id and return it', async () => {
+  test("findById should find hero by id and return it", async () => {
     const endMock = jest.fn();
     const jsonMock = jest.fn(() => ({ end: endMock }));
     const statusMock = jest.fn(() => ({ json: jsonMock }));
@@ -67,17 +86,16 @@ describe("TeamController", () => {
 
     await controller.findById({ params: { id: 1 } }, responseMock, () => {});
 
-    expect(repositoryMock.findById).toHaveBeenCalledTimes(1)
-    expect(repositoryMock.findById).toHaveBeenCalledWith(1) // id
-    expect(jsonMock).toHaveBeenCalledTimes(1)
-    expect(jsonMock).toHaveBeenCalledWith({ team: {} })
+    expect(repositoryMock.findById).toHaveBeenCalledTimes(1);
+    expect(repositoryMock.findById).toHaveBeenCalledWith(1); // id
+    expect(jsonMock).toHaveBeenCalledTimes(1);
+    expect(jsonMock).toHaveBeenCalledWith({ team: {} });
+  });
 
-  })
-
-  test('delete should call delete function from repository', async () => {
+  test("delete should call delete function from repository", async () => {
     await controller.delete({ params: { id: 1 } }, {}, () => {});
 
-    expect(repositoryMock.delete).toHaveBeenCalledTimes(1)
-    expect(repositoryMock.delete).toHaveBeenCalledWith(1) // id
-  })
+    expect(repositoryMock.delete).toHaveBeenCalledTimes(1);
+    expect(repositoryMock.delete).toHaveBeenCalledWith(1); // id
+  });
 });

@@ -25,7 +25,7 @@ export default class TeamRepository {
     if (!teams || teams.length < 1) {
       throw new TeamsNotFoundError("Teams not found.");
     }
-    return teams.map(team => dataToEntity(team))
+    return teams.map((team) => dataToEntity(team));
   }
 
   async findById(id) {
