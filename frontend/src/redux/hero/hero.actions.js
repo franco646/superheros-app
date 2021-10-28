@@ -27,7 +27,7 @@ const fetchHero = (id) => async (dispatch) => {
   dispatch(fetchHeroRequest());
   const token = localStorage.getItem("token");
   try {
-    const response = await axios.get(`heroes/${id}`, {
+    const response = await axios.get(`/heroes/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     const hero = response.data.hero;

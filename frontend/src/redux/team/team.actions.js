@@ -36,12 +36,9 @@ const fetchTeam = (id) => async (dispatch) => {
     const response = await axios.get(`/teams/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log('RESPONSE: ', response)
     const team = response.data.team;
-    console.log('FETCHED TEAM: ', team)
     dispatch(fetchTeamSuccess(team));
   } catch (error) {
-    console.log('ERROR: ', error)
     if (error.response.status === 401) {
       dispatch(loginUserFailure(error.response.data));
     }

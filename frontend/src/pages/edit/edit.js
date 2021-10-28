@@ -66,8 +66,6 @@ const Edit = ({
     return <Redirect to={redirectTo} />;
   }
 
-  console.log('is fetching: ', isFetching, 'HEROES:', team)
-
   return isFetching ? (
     <Spinner />
   ) : (
@@ -81,7 +79,7 @@ const Edit = ({
         initialValues={team}
       >
         {({ values, errors, setErrors, handleChange }) => {
-          const heroes = values.heroes || []
+          const heroes = values.heroes;
 
           const goodHeroesCount = heroes.filter(
             (hero) => hero.biography.alignment === "good"

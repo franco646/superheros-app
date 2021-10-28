@@ -45,7 +45,7 @@ const deleteTeamSuccess = (team) => ({
 const deleteTeam = (team) => async (dispatch) => {
   try {
     const token = localStorage.getItem("token");
-    await axios.delete(`teams/delete/${team.id}`, {
+    await axios.delete(`/teams/delete/${team.id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     dispatch(deleteTeamSuccess(team));

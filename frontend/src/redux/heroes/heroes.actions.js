@@ -46,7 +46,7 @@ const fetchHeroesBySearchParam =
     const token = localStorage.getItem("token");
     try {
       const response = await axiosInstance.get(
-        `heroes/search/${searchParam}?limit=12&offset=${offset}`,
+        `/heroes/search/${searchParam}?limit=12&offset=${offset}`,
         {
           headers: { Authorization: `Bearer ${token}` },
           cancelToken: source.token,

@@ -39,7 +39,7 @@ const loginUser =
   async (dispatch) => {
     try {
       dispatch(loginUserRequest());
-      const response = await axios.post("auth/login", {
+      const response = await axios.post("/auth/login", {
         email,
         password,
       });
