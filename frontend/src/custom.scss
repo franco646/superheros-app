@@ -1,0 +1,41 @@
+$body-bg: #242735;
+$body-color: #ffffff;
+
+$primary: #3b6cfc;
+$secondary: #282b39;
+$danger: #ff5341;
+
+$gray-1: #a1a6b6;
+$gray-2: #6b7185;
+$gray-3: #3a3f50;
+$gray-6: #11131b;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "danger": $danger,
+  "gray-1": $gray-1,
+  "gray-2": $gray-2,
+  "gray-3": $gray-3,
+  "gray-6": $gray-6,
+);
+
+$box-shadow: -1px 10px 15px 0 rgba(0, 0, 0, 50%);
+
+$card-border-radius: 12px;
+
+$alert-bg-scale: -40%;
+$alert-border-scale: 100%;
+$alert-color-scale: 100%;
+
+$pagination-border-radius: 12px;
+$pagination-color: $body-color;
+$pagination-bg: $body-bg;
+$pagination-hover-color: $body-color;
+$pagination-hover-bg: $gray-3;
+$pagination-hover-border-color: $gray-1;
+
+$form-select-bg-size: 32px 24px;
+$form-select-indicator-color: $body-color;
+
+@import "~bootstrap/scss/bootstrap.scss";

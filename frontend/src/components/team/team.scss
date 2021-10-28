@@ -1,0 +1,20 @@
+.team__card {
+  transition: all 0.1s linear;
+  overflow: hidden;
+
+  .team__card__image-shadow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: linear-gradient(to left, #282b39, transparent 50%);
+
+    @media (max-width: 576px) {
+      background: linear-gradient(to top, #282b39, transparent 50%);
+    }
+  }
+
+  &:hover {
+    background-color: rgba(58, 63, 80, 0.5) !important;
+  }
+}

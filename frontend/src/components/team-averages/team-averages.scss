@@ -1,0 +1,10 @@
+.team__averages {
+  position: absolute;
+  top: calc(50% + 1rem);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  @media (max-width: 1200px) {
+    all: inherit;
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "superheros-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "frontend"
+    ]
+  },
+  "scripts": {
+    "test": "npm run test-backend && npm run test-frontend",
+    "test-backend": "jest",
+    "test-frontend": "npm run test --prefix frontend",
+    "install": "npm install && npm install --prefix frontend",
+    "start": "node src/app.js",
+    "client": "npm run start --prefix frontend",
+    "dev": "concurrently \"nodemon src/app.js\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franco646/superheros-app.git"
+  },
+  "author": "franco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franco646/superheros-app/issues"
+  },
+  "homepage": "https://github.com/franco646/superheros-app#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.3.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "sequelize": "^6.6.5",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.15.8",
+    "babel-jest": "^27.3.1",
+    "jest": "^27.3.1",
+    "prettier": "2.3.2"
+  }
+}
