@@ -52,12 +52,9 @@ const Edit = ({
 
   useEffect(() => {
     clearHeroes();
-    async function fetchData() {
-      if (teamId) {
-        await fetchTeam(teamId);
-      }
+    if (teamId) {
+      fetchTeam(teamId);
     }
-    fetchData()
     return () => clearTeam();
   }, [teamId, fetchTeam, clearHeroes, clearTeam]);
 
@@ -68,6 +65,8 @@ const Edit = ({
   if (redirectTo) {
     return <Redirect to={redirectTo} />;
   }
+
+  console.log('is fetching: ', isFetching, 'HEROES:', team)
 
   return isFetching ? (
     <Spinner />
@@ -82,7 +81,7 @@ const Edit = ({
         initialValues={team}
       >
         {({ values, errors, setErrors, handleChange }) => {
-          const heroes = values.heroes;
+          const heroes = values.heroes || []
 
           const goodHeroesCount = heroes.filter(
             (hero) => hero.biography.alignment === "good"
