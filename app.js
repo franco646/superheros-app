@@ -13,7 +13,7 @@ import {
 } from "./src/module/error/errorHandler.js";
 
 import { init as initHeroesModule } from "./src/module/heroes/module.js";
-import { init as initAuthModule } from "./src/module/auth/Module.js";
+import { init as initAuthModule } from "./src/module/auth/module.js";
 import { init as initTeamModule } from "./src/module/team/module.js";
 
 import bodyParser from "body-parser";
