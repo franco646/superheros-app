@@ -1,5 +1,5 @@
 import TokenNotDefinedError from "../middleware/error/TokenNotDefinedError";
-import { AuthMiddleware } from "../module";
+import { AuthMiddleware } from "../Module";
 
 describe("AuthMiddleware", () => {
   beforeEach(() => {
