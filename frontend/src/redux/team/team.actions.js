@@ -33,7 +33,7 @@ const fetchTeam = (id) => async (dispatch) => {
   dispatch(fetchTeamRequest());
   try {
     const token = localStorage.getItem("token");
-    const response = await axios.get(`teams/${id}`, {
+    const response = await axios.get(`/teams/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     console.log('RESPONSE: ', response)
