@@ -18,7 +18,7 @@ import bodyParser from "body-parser";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "client", "build")))
+app.use(express.static(path.join(__dirname, "frontend", "build")))
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
