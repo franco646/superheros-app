@@ -52,9 +52,12 @@ const Edit = ({
 
   useEffect(() => {
     clearHeroes();
-    if (teamId) {
-      fetchTeam(teamId);
+    async function fetchData() {
+      if (teamId) {
+        await fetchTeam(teamId);
+      }
     }
+    fetchData()
     return () => clearTeam();
   }, [teamId, fetchTeam, clearHeroes, clearTeam]);
 
