@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import { HeroesController, HeroesService } from "../module/heroes/module.js";
-import { AuthController, AuthMiddleware } from "../module/Auth/module.js";
+import { AuthController, AuthMiddleware } from "../module/auth/Module.js";
 import {
   TeamController,
   TeamModel,
