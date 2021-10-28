@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "14.15.0"
+  },
   "jest": {
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
@@ -17,10 +20,10 @@
     "test-backend": "jest",
     "test-frontend": "npm run test --prefix frontend",
     "install-all": "npm install && npm install --prefix frontend",
-    "start": "node src/app.js",
+    "start": "node app.js",
     "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build",
     "client": "npm run start --prefix frontend",
-    "dev": "concurrently \"nodemon src/app.js\" \"npm run client\""
+    "dev": "concurrently \"nodemon app.js\" \"npm run client\""
   },
   "repository": {
     "type": "git",

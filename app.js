@@ -8,11 +8,11 @@ const app = express();
 import {
   returnError,
   logErrorMiddleware,
-} from "./module/error/errorHandler.js";
+} from "./src/module/error/errorHandler.js";
 
-import { init as initHeroesModule } from "./module/heroes/module.js";
-import { init as initAuthModule } from "./module/auth/module.js";
-import { init as initTeamModule } from "./module/team/module.js";
+import { init as initHeroesModule } from "./src/module/heroes/module.js";
+import { init as initAuthModule } from "./src/module/auth/module.js";
+import { init as initTeamModule } from "./src/module/team/module.js";
 
 import bodyParser from "body-parser";
 
