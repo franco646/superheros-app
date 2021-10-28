@@ -1,4 +1,4 @@
-import AuthController from "./Controller/authController.js";
+import AuthController from "./controller/authController.js";
 import AuthMiddleware from "./middleware/authMiddleware.js";
 
 import { authController } from "../../config/di.js";
