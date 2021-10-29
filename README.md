@@ -12,7 +12,7 @@ https://alkemy-superhero-app.herokuapp.com/
 
 _Nota: la aplicación puede demorar hasta 20 segundos en iniciarse._
 
-### Instalación y ejecución 🔧
+## Instalación y ejecución 🔧
 
 _Para ejecutar esta aplicación de manera local siga los pasos:_
 
