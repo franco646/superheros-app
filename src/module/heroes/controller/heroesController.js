@@ -48,8 +48,7 @@ export default class HeroesController {
     const { id } = req.params;
     try {
       const hero = await this.heroesService.findById(id);
-      const mappedHero = fromDataToEntity(hero);
-      res.status(200).json({ hero: mappedHero }).end();
+      res.status(200).json({ hero }).end();
     } catch (error) {
       next(error);
     }
