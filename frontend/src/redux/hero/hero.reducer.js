@@ -5,8 +5,8 @@ import {
 } from "./hero.types";
 
 const initialState = {
-  hero: [],
-  isFetching: false,
+  hero: {},
+  isFetching: true,
 };
 
 const heroReducer = (state = initialState, action) => {
@@ -27,7 +27,8 @@ const heroReducer = (state = initialState, action) => {
     case CLEAR_HERO: {
       return {
         ...state,
-        heroes: [],
+        hero: {},
+        isFetching: true,
       };
     }
     default: {
