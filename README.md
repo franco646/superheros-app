@@ -11,7 +11,7 @@ _Puede ver una demostración en vivo de esta aplicación en el siguiente link:_
 
 https://alkemy-superhero-app.herokuapp.com/
 
-_Nota: la aplicación puede demorar hasta 20 segundos en iniciarse._
+> **NOTA:** la aplicación puede demorar hasta 20 segundos en iniciarse
 
 
 ## Instalación y ejecución 🔧
