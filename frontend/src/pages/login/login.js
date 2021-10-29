@@ -90,17 +90,14 @@ const Login = ({ login, user }) => {
                 />
                 <Checkbox label="Recuérdame" id="login__remember-check" />
                 {user.errorMessage ? <Alert>{user.errorMessage}</Alert> : null}
-                {user.isAuthenticating ? (
-                  <Spinner className="text-primary" />
-                ) : (
-                  <Button
-                    className="w-100 btn-lg btn-primary"
-                    type="submit"
-                    data-testid="login-button"
-                  >
-                    Iniciar sesión
-                  </Button>
-                )}
+
+                <Button
+                  className="w-100 btn-lg btn-primary"
+                  type="submit"
+                  data-testid="login-button"
+                >
+                  {user.isAuthenticating ? <Spinner /> : "Iniciar sesión"}
+                </Button>
                 <hr className="my-4" />
                 <small className="text-muted">
                   Al hacer click en iniciar sesión, acepta los términos de uso.
