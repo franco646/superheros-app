@@ -29,7 +29,7 @@ export default class HeroesService {
     );
 
     const hero = response.data;
-    if (!hero) {
+    if (hero.response === "error") {
       throw new HeroNotFoundError("Hero not found.");
     }
 
