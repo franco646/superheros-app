@@ -6,7 +6,7 @@ import {
 } from "./auth.types";
 
 const initialState = {
-  isAuthenticating: false,
+  isAuthenticating: true,
   isAuthenticated: false,
   errorMessage: "",
 };

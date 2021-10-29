@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 import { superHeroesLight } from "../../assets";
 
 import { BsBoxArrowInRight } from "react-icons/bs";
@@ -13,13 +15,15 @@ import { logoutUser } from "../../redux/auth/auth.actions";
 const Navbar = ({ logout }) => (
   <nav className="navbar navbar-expand navbar-dark bg-gray-6">
     <div className="container-fluid">
-      <img
-        src={superHeroesLight}
-        alt="Super heroes app"
-        width="180"
-        height="30"
-        className="d-inline-block align-text-top"
-      />
+      <Link to="/">
+        <img
+          src={superHeroesLight}
+          alt="Super heroes app"
+          width="180"
+          height="30"
+          className="d-inline-block align-text-top"
+        />
+      </Link>
       <div className="d-flex">
         <Button
           className="btn-outline-danger"

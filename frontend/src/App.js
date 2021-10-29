@@ -12,6 +12,7 @@ import Edit from "./pages/edit/edit";
 import Hero from "./pages/hero/hero";
 
 import "./App.css";
+import Spinner from "./components/spinner/spinner";
 
 function App({ user, loginUserSuccess }) {
   useEffect(() => {
@@ -21,7 +22,9 @@ function App({ user, loginUserSuccess }) {
     }
   }, [loginUserSuccess]);
 
-  return (
+  return user.isAuthenticating ? (
+    <Spinner />
+  ) : (
     <>
       {user.isAuthenticated ? <Navbar /> : null}
       <Switch>
