@@ -24,7 +24,11 @@ const Hero = ({ hero, editionMode, onRemoveHero, ...otherProps }) => (
         </button>
       ) : (
         <Link to={`/hero/${hero.id}`}>
-          <button className="hero__top-button p-1" type="button">
+          <button
+            className="hero__top-button p-1"
+            type="button"
+            onClick={(e) => e.stopPropagation()}
+          >
             <FiChevronUp className="m-0 p-0" />
           </button>
         </Link>
@@ -32,7 +36,7 @@ const Hero = ({ hero, editionMode, onRemoveHero, ...otherProps }) => (
       <img
         src={hero.image.url}
         className="img-fluid hero-image"
-        alt={`${hero.name}`}
+        alt={hero.name}
         width="400"
         height="400"
       />
