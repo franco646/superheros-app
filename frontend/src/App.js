@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Switch, Route, Redirect } from "react-router-dom";
 
@@ -15,14 +15,17 @@ import "./App.css";
 import Spinner from "./components/spinner/spinner";
 
 function App({ user, loginUserSuccess }) {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token !== null) {
       loginUserSuccess(token);
     }
+    setIsLoading(false);
   }, [loginUserSuccess]);
 
-  return user.isAuthenticating ? (
+  return isLoading ? (
     <Spinner />
   ) : (
     <>
@@ -50,6 +53,7 @@ function App({ user, loginUserSuccess }) {
 
 const mapStateToProps = (state) => ({
   user: state.auth,
+  redirectTo: state.redirect.redirectTo,
 });
 
 const mapDispatchToProps = (dispatch) => ({
