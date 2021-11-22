@@ -21,13 +21,17 @@ _Para ejecutar esta aplicación de manera local siga los pasos:_
 npm install-all
 ```
 
-#### 2. Correr el proyecto (backend y frontend).
+#### 2. Configurar las variables de entorno.
+
+_Crear un archivo `.env` en la raíz del proyecto y definir las variables, guiándose por el archivo `.env.dist` en la misma ubicación._
+
+#### 3. Correr el proyecto (backend y frontend).
 
 ```
 npm run dev
 ```
 
-#### 3. Abrir proyecto  en el navegador.
+#### 4. Abrir proyecto  en el navegador.
 
 ```
 http://localhost:3000/
