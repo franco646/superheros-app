@@ -21,9 +21,10 @@
     "test-frontend": "npm run test --prefix frontend",
     "install-all": "npm install && npm install --prefix frontend",
     "start": "node app.js",
+    "server": "nodemon app.js",
     "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build",
     "client": "npm run start --prefix frontend",
-    "dev": "concurrently \"nodemon app.js\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
