@@ -20,7 +20,7 @@ _Para ejecutar esta aplicación de manera local siga los pasos:_
 
 #### 1. Instalar dependencias (backend y frontend).
 ```
-npm install-all
+npm run install-all
 ```
 
 #### 2. Configurar las variables de entorno.
