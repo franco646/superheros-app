@@ -48,8 +48,8 @@ const Login = ({ login, user }) => {
             onSubmit={handleSubmit}
             validateOnBlur
             initialValues={{
-              email: "",
-              password: "",
+              email: "challenge@alkemy.org",
+              password: "react",
             }}
           >
             {({
