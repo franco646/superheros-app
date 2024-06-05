@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Routes, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { loginUserSuccess } from "./redux/auth/auth.actions";
 
@@ -32,19 +32,19 @@ function App({ user, loginUserSuccess }) {
       {user.isAuthenticated ? <Navbar /> : null}
       <Routes>
         <Route path="/" exact>
-          <Redirect to="/home" />
+          <Navigate to="/home" />
         </Route>
         <Route path="/home">
-          {!user.isAuthenticated ? <Redirect to="/login" /> : <Home />}
+          {!user.isAuthenticated ? <Navigate to="/login" /> : <Home />}
         </Route>
         <Route path="/edit/:teamId?">
-          {!user.isAuthenticated ? <Redirect to="/login" /> : <Edit />}
+          {!user.isAuthenticated ? <Navigate to="/login" /> : <Edit />}
         </Route>
         <Route path="/hero/:heroId">
-          {!user.isAuthenticated ? <Redirect to="/login" /> : <Hero />}
+          {!user.isAuthenticated ? <Navigate to="/login" /> : <Hero />}
         </Route>
         <Route path="/login">
-          {user.isAuthenticated ? <Redirect to="/home" /> : <Login />}
+          {user.isAuthenticated ? <Navigate to="/home" /> : <Login />}
         </Route>
       </Routes>
     </>

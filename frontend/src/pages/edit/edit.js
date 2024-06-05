@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import * as yup from "yup";
 import { Formik, Form, FieldArray } from "formik";
 
-import { useParams, Redirect } from "react-router-dom";
+import { useParams, Navigate  } from "react-router-dom";
 
 import FloatingInput from "../../components/floating-input/floating-input";
 import Spinner from "../../components/spinner/spinner";
@@ -63,7 +63,7 @@ const Edit = ({
   };
 
   if (redirectTo) {
-    return <Redirect to={redirectTo} />;
+    return <Navigate  to={redirectTo} />;
   }
 
   return isFetching ? (

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { fetchHero, clearHero } from "../../redux/hero/hero.actions";
 
 import { connect } from "react-redux";
-import { Redirect, useParams } from "react-router-dom";
+import { Navigate , useParams } from "react-router-dom";
 import Spinner from "../../components/spinner/spinner";
 import Card from "../../components/card/card";
 import Powerstats from "../../components/powerstats/powerstats";
@@ -20,7 +20,7 @@ const Hero = ({ hero, isFetching, fetchHero, clearHero, redirectTo }) => {
   }, [fetchHero, heroId, clearHero]);
 
   if (redirectTo) {
-    return <Redirect to={redirectTo} />;
+    return <Navigate  to={redirectTo} />;
   }
 
   return isFetching ? (
