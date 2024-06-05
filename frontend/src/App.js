@@ -31,21 +31,11 @@ function App({ user, loginUserSuccess }) {
     <>
       {user.isAuthenticated ? <Navbar /> : null}
       <Routes>
-        <Route path="/" exact>
-          <Navigate to="/home" />
-        </Route>
-        <Route path="/home">
-          {!user.isAuthenticated ? <Navigate to="/login" /> : <Home />}
-        </Route>
-        <Route path="/edit/:teamId?">
-          {!user.isAuthenticated ? <Navigate to="/login" /> : <Edit />}
-        </Route>
-        <Route path="/hero/:heroId">
-          {!user.isAuthenticated ? <Navigate to="/login" /> : <Hero />}
-        </Route>
-        <Route path="/login">
-          {user.isAuthenticated ? <Navigate to="/home" /> : <Login />}
-        </Route>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={!user.isAuthenticated ? <Navigate to="/login" /> : <Home />} />
+        <Route path="/edit/:teamId?" element={!user.isAuthenticated ? <Navigate to="/login" /> : <Edit />} />
+        <Route path="/hero/:heroId" element={!user.isAuthenticated ? <Navigate to="/login" /> : <Hero />} />
+        <Route path="/login" element={user.isAuthenticated ? <Navigate to="/home" /> : <Login />} />
       </Routes>
     </>
   );
