@@ -12,8 +12,6 @@ import "./custom.scss";
 const rootElement = document.getElementById("root");
 
 ReactDOM.createRoot(rootElement).render(
-  <div>
-    hola
     <React.StrictMode>
       <Provider store={store}>
         <Router>
@@ -21,7 +19,6 @@ ReactDOM.createRoot(rootElement).render(
         </Router>
       </Provider>
     </React.StrictMode>
-  </div>
 );
 
 // If you want your app to work offline and load faster, you can change
