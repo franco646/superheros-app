@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Routes, Route, Redirect } from "react-router-dom";
 
 import { loginUserSuccess } from "./redux/auth/auth.actions";
 
@@ -30,7 +30,7 @@ function App({ user, loginUserSuccess }) {
   ) : (
     <>
       {user.isAuthenticated ? <Navbar /> : null}
-      <Switch>
+      <Routes>
         <Route path="/" exact>
           <Redirect to="/home" />
         </Route>
@@ -46,7 +46,7 @@ function App({ user, loginUserSuccess }) {
         <Route path="/login">
           {user.isAuthenticated ? <Redirect to="/home" /> : <Login />}
         </Route>
-      </Switch>
+      </Routes>
     </>
   );
 }
